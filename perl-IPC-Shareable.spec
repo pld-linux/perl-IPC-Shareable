@@ -8,7 +8,7 @@ Summary:	IPC::Shareable - share Perl variables between processes
 Summary(pl):	IPC::Shareable - dzielenie zmiennych Perla miêdzy procesami
 Name:		perl-IPC-Shareable
 Version:	0.60
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -16,7 +16,7 @@ BuildRequires:	perl >= 5.6
 %if %{?_with_tests:1}%{!?_with_tests:0}
 BuildRequires:	perl-Storable >= 0.607
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,7 +39,8 @@ referencjami do tablic, haszy haszy itd.
 %{__perl} -pi -e 's/^(require 5.005)(03;)$/$1_$2/' ./lib/IPC/Shareable.pm
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %{?_with_tests:%{__make} test}
@@ -58,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES CREDITS DISCLAIMER README TO_DO
-%{perl_sitelib}/%{pdir}/*.pm
-%{perl_sitelib}/%{pdir}/%{pnam}
+%{perl_vendorlib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/%{pnam}
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/*
