@@ -39,7 +39,7 @@ referencjami do tablic, haszy haszy itd.
 perl -pi -e 's/^(require 5.005)(03;)$/$1_$2/' ./lib/IPC/Shareable.pm
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %{?_with_tests:%{__make} test}
