@@ -41,7 +41,7 @@ referencjami do tablic, haszy haszy itd.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 %{?_with_tests:%{__make} test}
