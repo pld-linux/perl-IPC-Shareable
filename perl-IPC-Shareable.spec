@@ -1,6 +1,7 @@
 #
 # Conditional build:
-# _with_tests - perform "make test"
+%bcond_with	tests	# perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	IPC
 %define	pnam	Shareable
@@ -14,9 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	51462dabfb4eec81e0b3417a9f9add4e
 BuildRequires:	perl-devel >= 5.6
-%if %{?_with_tests:1}%{!?_with_tests:0}
-BuildRequires:	perl-Storable >= 0.607
-%endif
+%{?with_tests:BuildRequires:	perl-Storable >= 0.607}
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,7 +43,7 @@ referencjami do tablic, haszy haszy itd.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
