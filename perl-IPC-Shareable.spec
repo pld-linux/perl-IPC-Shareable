@@ -36,7 +36,7 @@ referencjami do tablic, haszy haszy itd.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-perl -pi -e 's/^(require 5.005)(03;)$/$1_$2/' ./lib/IPC/Shareable.pm
+%{__perl} -pi -e 's/^(require 5.005)(03;)$/$1_$2/' ./lib/IPC/Shareable.pm
 
 %build
 %{__perl} Makefile.PL
