@@ -5,7 +5,7 @@
 %define	pdir	IPC
 %define	pnam	Shareable
 Summary:	IPC::Shareable - share Perl variables between processes
-#Summary(pl):	
+Summary(pl):	IPC::Shareable - dzielenie zmiennych Perla miêdzy procesami
 Name:		perl-IPC-Shareable
 Version:	0.60
 Release:	1
@@ -13,10 +13,10 @@ License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
 %if %{?_with_tests:1}%{!?_with_tests:0}
 BuildRequires:	perl-Storable >= 0.607
 %endif
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,8 +27,12 @@ Scalars, arrays, and hashes can be tied.  The variable being tied may
 contain arbitrarily complex data structures - including references to
 arrays, hashes of hashes, etc.
 
-# %description -l pl
-# TODO
+%description -l pl
+Modu³ IPC::Shareable pozwala zwi±zaæ zmienn± z pamiêci± dzielon±, co
+u³atwia wspó³dzielenie zawarto¶ci tej zmiennej z innymi procesami
+Perla. Wi±zane mog± byæ skalary, tablice i hasze. Powi±zana zmienna
+mo¿e zawieraæ dowolnie skomplikowane struktury danych - w³±czenie z
+referencjami do tablic, haszy haszy itd.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
