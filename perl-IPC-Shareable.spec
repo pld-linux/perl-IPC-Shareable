@@ -8,7 +8,7 @@ Summary:	IPC::Shareable - share Perl variables between processes
 Summary(pl):	IPC::Shareable - dzielenie zmiennych Perla miêdzy procesami
 Name:		perl-IPC-Shareable
 Version:	0.60
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
