@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	IPC
-%define	pnam	Shareable
+%define		pdir	IPC
+%define		pnam	Shareable
 Summary:	IPC::Shareable - share Perl variables between processes
 Summary(pl):	IPC::Shareable - wspó³dzielenie zmiennych Perla miêdzy procesami
 Name:		perl-IPC-Shareable
