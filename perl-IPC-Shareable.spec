@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	IPC
 %define		pnam	Shareable
+%include	/usr/lib/rpm/macros.perl
 Summary:	IPC::Shareable - share Perl variables between processes
 Summary(pl.UTF-8):	IPC::Shareable - współdzielenie zmiennych Perla między procesami
 Name:		perl-IPC-Shareable
@@ -14,6 +14,7 @@ License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	51462dabfb4eec81e0b3417a9f9add4e
+URL:		http://search.cpan.org/dist/IPC-Shareable/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -22,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 IPC::Shareable allows you to tie a variable to shared memory making it
 easy to share the contents of that variable with other Perl processes.
-Scalars, arrays, and hashes can be tied.  The variable being tied may
+Scalars, arrays, and hashes can be tied. The variable being tied may
 contain arbitrarily complex data structures - including references to
 arrays, hashes of hashes, etc.
 
